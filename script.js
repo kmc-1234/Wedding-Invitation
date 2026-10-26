@@ -1,12 +1,12 @@
 /**
- * VENKATA SAIKUMAR & ROHINI VARALAKSHMI — ROYAL WEDDING CELEBRATIONS
+ * KAMMA MANIDHIP CHOWDARY & PRIYANKA — ROYAL WEDDING CELEBRATIONS
  * Interactive Engine:
  * - Royal Wax Seal Unlock Screen (InviteStory Reel Signature)
  * - Auspicious Indian Web Audio Synthesizer (Tanpura, Flute & Temple Bell)
  * - Golden Akshatas & Floral Petals Canvas Physics
  * - Real-Time Muhurtham Countdown Clock
- * - Multi-Event Calendar Invite Generator (.ics)
- * - 3-Venue Interactive Directions Modal
+ * - Wedding Calendar Invite Generator (.ics)
+ * - Wedding Directions Modal
  * - Guest Blessings Wall (Aashirwadam) with Local Storage
  */
 
@@ -15,9 +15,9 @@
 
   // =========================================================================
   // 1. REAL-TIME MUHURTHAM COUNTDOWN
-  // Muhurtham: Friday, 20 November 2026 at 9:53 PM IST (UTC+05:30)
+  // Muhurtham: Thursday, 3 December 2026; ceremony time to be announced
   // =========================================================================
-  const muhurthamDate = new Date('2026-11-20T21:53:00+05:30').getTime();
+  const muhurthamDate = new Date('2026-12-03T00:00:00+05:30').getTime();
   const elDays = document.getElementById('cdDays');
   const elHours = document.getElementById('cdHours');
   const elMins = document.getElementById('cdMins');
@@ -33,7 +33,12 @@
       if (elMins) elMins.textContent = '00';
       if (elSecs) elSecs.textContent = '00';
       const badge = document.querySelector('.cd-title-badge');
-      if (badge) badge.textContent = '॥ శుభ ముహూర్తం ॥ TODAY IS THE AUSPICIOUS DAY!';
+      if (badge) {
+        const today = new Date(now).toLocaleDateString('en-CA', { timeZone: 'Asia/Kolkata' });
+        badge.textContent = today === '2026-12-03'
+          ? 'శుభ వివాహం · TODAY IS OUR WEDDING DAY!'
+          : 'శుభ వివాహం · 3 DECEMBER 2026';
+      }
       return;
     }
 
@@ -427,7 +432,7 @@
   }
 
   // =========================================================================
-  // 5. DIRECTIONS MODAL (3 VENUES)
+  // 5. DIRECTIONS MODAL (WEDDING LOCATION)
   // =========================================================================
   const dockDirectionsBtn = document.getElementById('dockDirectionsBtn');
   const directionsModal = document.getElementById('directionsModal');
@@ -454,14 +459,9 @@
   const closeSaveDateBtn = document.getElementById('closeSaveDateBtn');
   const saveDateBackdrop = document.getElementById('saveDateBackdrop');
 
-  const calDownloadAllBtn = document.getElementById('calDownloadAllBtn');
-  const calDownloadHaldiBtn = document.getElementById('calDownloadHaldiBtn');
   const calDownloadMuhurthamBtn = document.getElementById('calDownloadMuhurthamBtn');
-  const calDownloadVrathamBtn = document.getElementById('calDownloadVrathamBtn');
 
-  const calendarHaldiBtn = document.getElementById('calendarHaldiBtn');
   const calendarMuhurthamBtn = document.getElementById('calendarMuhurthamBtn');
-  const calendarVrathamBtn = document.getElementById('calendarVrathamBtn');
 
   function openSaveDate() {
     if (saveDateModal) saveDateModal.removeAttribute('hidden');
@@ -488,67 +488,25 @@
     URL.revokeObjectURL(url);
   }
 
-  // 1. Haldi & Sangeeth ICS
-  const HALDI_SANGEETH_ICS_BLOCK = [
-    'BEGIN:VEVENT',
-    'UID:saikumar-rohini-haldi-sangeeth-20261119@subhavivaham.in',
-    'DTSTAMP:20261025T000000Z',
-    'DTSTART:20261119T033000Z', // 9:00 AM IST = 03:30 UTC
-    'DTEND:20261119T173000Z',   // 11:00 PM IST = 17:30 UTC
-    'SUMMARY:Haldi & Sangeeth Celebrations — Venkata Saikumar & Rohini Varalakshmi',
-    'LOCATION:Ambica Sea Green, Beach Road, Visakhapatnam, Andhra Pradesh',
-    'DESCRIPTION:Haldi Ceremony (Morning) followed by Sangeeth & Musical Night (Evening).\\nVenue: Ambica Sea Green, Beach Road, Visakhapatnam.\\nGoogle Maps: https://maps.app.goo.gl/HKqPGgwte3YvETWB6',
-    'STATUS:CONFIRMED',
-    'END:VEVENT'
-  ].join('\r\n');
-
-  // 2. Subha Muhurtham ICS
+  // All-day calendar entry until the family supplies a ceremony time.
   const MUHURTHAM_ICS_BLOCK = [
     'BEGIN:VEVENT',
-    'UID:saikumar-rohini-muhurtham-20261120@subhavivaham.in',
-    'DTSTAMP:20261025T000000Z',
-    'DTSTART:20261120T162300Z', // 9:53 PM IST = 16:23 UTC
-    'DTEND:20261120T190000Z',
-    'SUMMARY:Subha Vivaham (Muhurtham) — Venkata Saikumar & Rohini Varalakshmi',
-    'LOCATION:TTD Kalyana Mandapam, MVP Colony, Visakhapatnam, Andhra Pradesh',
-    'DESCRIPTION:Auspicious Wedding Ceremony of Venkata Saikumar and Rohini Varalakshmi.\\nSubha Muhurtham at 9:53 PM IST.\\nVenue: TTD Kalyana Mandapam, MVP Colony, Visakhapatnam.',
+    'UID:manidhip-priyanka-wedding-20261203@subhavivaham.in',
+    `DTSTAMP:${new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d{3}Z$/, 'Z')}`,
+    'DTSTART;VALUE=DATE:20261203',
+    'DTEND;VALUE=DATE:20261204',
+    'SUMMARY:Wedding — Kamma Manidhip Chowdary & Priyanka',
+    'LOCATION:Botlagudur Village\\, Pamur Mandal\\, Markapuram District\\, Andhra Pradesh',
+    'DESCRIPTION:శుభ వివాహం — కమ్మ మణిదీప్ చౌదరి మరియు ప్రియాంక.\\nబొట్లగూడూరు గ్రామం\\, పామూరు మండలం\\, మార్కాపురం జిల్లా.\\nCeremony time to be announced.',
     'STATUS:CONFIRMED',
     'END:VEVENT'
   ].join('\r\n');
-
-  // 3. Vratham & Wedding Lunch ICS
-  const VRATHAM_ICS_BLOCK = [
-    'BEGIN:VEVENT',
-    'UID:saikumar-rohini-vratham-lunch-20261122@subhavivaham.in',
-    'DTSTAMP:20261025T000000Z',
-    'DTSTART:20261122T040000Z', // 9:30 AM IST = 04:00 UTC
-    'DTEND:20261122T093000Z',   // 3:00 PM IST = 09:30 UTC
-    'SUMMARY:Sri Satyanarayana Swamy Vratham & Festive Wedding Lunch (Saikumar & Rohini)',
-    'LOCATION:Sri Sai Krishna Mandir, 2-60-5, Sambhu Nagar, Alcot Gardens, Rajamahendravaram, Andhra Pradesh 533101',
-    'DESCRIPTION:Auspicious Sri Satyanarayana Swamy Vratham Pooja followed by Festive Wedding Lunch / Traditional Kalyana Bhojanam (Mahaprasadam).\\nVenue: Sri Sai Krishna Mandir, Rajahmundry.\\nGoogle Maps: https://maps.app.goo.gl/oMhQ2octoprPrzRn9',
-    'STATUS:CONFIRMED',
-    'END:VEVENT'
-  ].join('\r\n');
-
-  function getFullMasterCalendarIcs() {
-    return [
-      'BEGIN:VCALENDAR',
-      'VERSION:2.0',
-      'PRODID:-//Venkata Saikumar & Rohini Varalakshmi//Wedding Celebrations//EN',
-      'CALSCALE:GREGORIAN',
-      'METHOD:PUBLISH',
-      HALDI_SANGEETH_ICS_BLOCK,
-      MUHURTHAM_ICS_BLOCK,
-      VRATHAM_ICS_BLOCK,
-      'END:VCALENDAR'
-    ].join('\r\n');
-  }
 
   function getSingleEventIcs(block) {
     return [
       'BEGIN:VCALENDAR',
       'VERSION:2.0',
-      'PRODID:-//Venkata Saikumar & Rohini Varalakshmi//Wedding Celebrations//EN',
+      'PRODID:-//Kamma Manidhip Chowdary & Priyanka//Wedding Celebrations//EN',
       'CALSCALE:GREGORIAN',
       'METHOD:PUBLISH',
       block,
@@ -556,49 +514,18 @@
     ].join('\r\n');
   }
 
-  if (calDownloadAllBtn) {
-    calDownloadAllBtn.addEventListener('click', () => {
-      downloadIcs('Saikumar-Rohini-Complete-Wedding-Schedule.ics', getFullMasterCalendarIcs());
-      closeSaveDate();
-    });
-  }
-
-  if (calDownloadHaldiBtn) {
-    calDownloadHaldiBtn.addEventListener('click', () => {
-      downloadIcs('Haldi-Sangeeth-Saikumar-Rohini.ics', getSingleEventIcs(HALDI_SANGEETH_ICS_BLOCK));
-      closeSaveDate();
-    });
-  }
 
   if (calDownloadMuhurthamBtn) {
     calDownloadMuhurthamBtn.addEventListener('click', () => {
-      downloadIcs('Subha-Muhurtham-Saikumar-Rohini.ics', getSingleEventIcs(MUHURTHAM_ICS_BLOCK));
+      downloadIcs('Manidhip-Priyanka-Wedding.ics', getSingleEventIcs(MUHURTHAM_ICS_BLOCK));
       closeSaveDate();
     });
   }
 
-  if (calDownloadVrathamBtn) {
-    calDownloadVrathamBtn.addEventListener('click', () => {
-      downloadIcs('Vratham-and-Wedding-Lunch-Saikumar-Rohini.ics', getSingleEventIcs(VRATHAM_ICS_BLOCK));
-      closeSaveDate();
-    });
-  }
-
-  if (calendarHaldiBtn) {
-    calendarHaldiBtn.addEventListener('click', () => {
-      downloadIcs('Haldi-Sangeeth-Saikumar-Rohini.ics', getSingleEventIcs(HALDI_SANGEETH_ICS_BLOCK));
-    });
-  }
 
   if (calendarMuhurthamBtn) {
     calendarMuhurthamBtn.addEventListener('click', () => {
-      downloadIcs('Subha-Muhurtham-Saikumar-Rohini.ics', getSingleEventIcs(MUHURTHAM_ICS_BLOCK));
-    });
-  }
-
-  if (calendarVrathamBtn) {
-    calendarVrathamBtn.addEventListener('click', () => {
-      downloadIcs('Vratham-and-Wedding-Lunch-Saikumar-Rohini.ics', getSingleEventIcs(VRATHAM_ICS_BLOCK));
+      downloadIcs('Manidhip-Priyanka-Wedding.ics', getSingleEventIcs(MUHURTHAM_ICS_BLOCK));
     });
   }
 
@@ -608,7 +535,7 @@
   const blessingForm = document.getElementById('blessingForm');
   const formStatus = document.getElementById('formStatus');
   const blessingsFeed = document.getElementById('blessingsFeed');
-  const STORAGE_KEY = 'saikumar_rohini_emerald_blessings';
+  const STORAGE_KEY = 'manidhip_priyanka_emerald_blessings';
 
   function renderBlessing(name, relation, message, dateStr, prepend = false) {
     if (!blessingsFeed) return;
