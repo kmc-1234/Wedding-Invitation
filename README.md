@@ -35,7 +35,7 @@ The invitation includes an opening seal, music controls, flower effects, directi
 
 - English / Telugu switch with a saved language preference.
 - Larger optimized portrait, soft natural color, and more comfortable mobile spacing.
-- Our Moments gallery with two supplied photographs and an accessible photo viewer.
+- Our Moments section uses the latest portrait with an accessible photo viewer.
 - RSVP form opens a WhatsApp draft. Guests select a family chat and send their reply; replies are not stored or sent automatically. A family WhatsApp number can be added when supplied.
 - Gentler flower effects, reduced-motion support, and music loaded only when needed.
 
