@@ -13,6 +13,29 @@
 (function () {
   'use strict';
 
+  // Language preference applies to the invitation, forms, and dialogs.
+  let language = 'en';
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function setLanguage(next) {
+    language = next === 'te' ? 'te' : 'en';
+    document.documentElement.lang = language;
+    document.querySelectorAll('[data-en][data-te]').forEach(el => {
+      el.textContent = el.dataset[language];
+    });
+    document.querySelectorAll('[data-language]').forEach(button => {
+      button.setAttribute('aria-pressed', String(button.dataset.language === language));
+    });
+    try { localStorage.setItem('wedding_language', language); } catch (e) {}
+    const message = document.getElementById('guestMessage');
+    if (message) message.placeholder = language === 'te' ? 'మీ ఆశీస్సులు ఇక్కడ రాయండి' : 'Your warm wishes for Manidhip and Priyanka…';
+    updateCountdown();
+    updateMusicLabel();
+  }
+  document.querySelectorAll('[data-language]').forEach(button => {
+    button.addEventListener('click', () => setLanguage(button.dataset.language));
+  });
+
+
   // =========================================================================
   // 1. REAL-TIME MUHURTHAM COUNTDOWN
   // Muhurtham: Thursday, 3 December 2026; ceremony time to be announced
@@ -36,12 +59,14 @@
       if (badge) {
         const today = new Date(now).toLocaleDateString('en-CA', { timeZone: 'Asia/Kolkata' });
         badge.textContent = today === '2026-12-03'
-          ? 'శుభ వివాహం · TODAY IS OUR WEDDING DAY!'
-          : 'శుభ వివాహం · 3 DECEMBER 2026';
+          ? (language === 'te' ? 'ఈ రోజే మా శుభ వివాహం!' : 'TODAY IS OUR WEDDING DAY!')
+          : (language === 'te' ? 'శుభ వివాహం · 3 డిసెంబర్ 2026' : 'OUR WEDDING · 3 DECEMBER 2026');
       }
       return;
     }
 
+    const badge = document.querySelector('.cd-title-badge');
+    if (badge) badge.textContent = language === 'te' ? '⏳ వివాహ వేడుకకు మిగిలిన సమయం' : '⏳ COUNTDOWN TO THE WEDDING';
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
     const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
@@ -70,7 +95,7 @@
   });
 
   const particles = [];
-  const MAX_AMBIENT_PARTICLES = 30;
+  const MAX_AMBIENT_PARTICLES = reducedMotion ? 0 : 14;
 
   class Particle {
     constructor(isBurst = false, originX, originY) {
@@ -165,17 +190,23 @@
     particles.push(p);
   }
 
-  function loop() {
+  let previousFrame = 0;
+  function loop(timestamp = 0) {
+    if (reducedMotion) return;
+    requestAnimationFrame(loop);
+    if (document.hidden || timestamp - previousFrame < 32) return;
+    previousFrame = timestamp;
     ctx.clearRect(0, 0, width, height);
     for (let i = 0; i < particles.length; i++) {
       particles[i].update();
       particles[i].draw();
     }
-    requestAnimationFrame(loop);
   }
   loop();
 
-  function triggerPetalShower(count = 70) {
+  function triggerPetalShower(count = 35) {
+    if (reducedMotion) return;
+    count = Math.min(count, 40);
     for (let i = 0; i < count; i++) {
       particles.push(new Particle(true));
     }
@@ -330,6 +361,10 @@
   const dockMusicLabel = document.getElementById('dockMusicLabel');
 
   let isUsingCustomAudio = false;
+  function updateMusicLabel() {
+    if (dockMusicLabel) dockMusicLabel.textContent = language === 'te'
+      ? (isPlaying ? 'ఆపండి' : 'సంగీతం') : (isPlaying ? 'Pause' : 'Music');
+  }
 
   async function toggleMusic(forceState = null) {
     isPlaying = forceState !== null ? forceState : !isPlaying;
@@ -337,7 +372,7 @@
     if (isPlaying) {
       if (musicToggleTop) musicToggleTop.classList.add('playing');
       if (dockMusicBtn) dockMusicBtn.classList.add('playing');
-      if (dockMusicLabel) dockMusicLabel.textContent = 'Pause';
+      updateMusicLabel();
       if (dockMusicIcon) dockMusicIcon.textContent = '⏸️';
 
       // Check if custom MP3 file can be played
@@ -370,7 +405,7 @@
     } else {
       if (musicToggleTop) musicToggleTop.classList.remove('playing');
       if (dockMusicBtn) dockMusicBtn.classList.remove('playing');
-      if (dockMusicLabel) dockMusicLabel.textContent = 'Music';
+      updateMusicLabel();
       if (dockMusicIcon) dockMusicIcon.textContent = '🎵';
 
       // Pause custom MP3 if playing
@@ -420,7 +455,15 @@
     document.body.classList.add('seal-locked');
   }
 
-  if (waxSealBtn) waxSealBtn.addEventListener('click', unlockSeal);
+  if (waxSealBtn) {
+    waxSealBtn.addEventListener('click', unlockSeal);
+    waxSealBtn.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        unlockSeal();
+      }
+    });
+  }
   if (reopenSealBtn) reopenSealBtn.addEventListener('click', relockSeal);
 
   // Shower button in bottom dock
@@ -608,7 +651,7 @@
       } catch (err) {}
 
       if (formStatus) {
-        formStatus.textContent = '॥ ధన్యవాదాలు ॥ Thank you for your divine blessings!';
+        formStatus.textContent = language === 'te' ? 'ధన్యవాదాలు! మీ ఆశీస్సులు అందించినందుకు కృతజ్ఞతలు.' : 'Thank you for your warm blessings!';
         formStatus.className = 'form-status-message success';
       }
 
@@ -621,4 +664,45 @@
     });
   }
 
+  // RSVP opens a draft; guests choose the family chat and send it themselves.
+  const rsvpForm = document.getElementById('rsvpForm');
+  const attendance = document.getElementById('rsvpAttendance');
+  const guests = document.getElementById('rsvpGuests');
+  attendance.addEventListener('change', () => {
+    const attending = attendance.value === 'yes';
+    document.getElementById('rsvpGuestsGroup').hidden = !attending;
+    guests.disabled = !attending;
+  });
+  rsvpForm.addEventListener('submit', event => {
+    event.preventDefault();
+    const name = document.getElementById('rsvpName').value.trim();
+    if (!name) { document.getElementById('rsvpName').focus(); return; }
+    const attending = attendance.value === 'yes';
+    const message = language === 'te'
+      ? `నమస్కారం! నేను ${name}. మణిదీప్ మరియు ప్రియాంక వివాహం (3 డిసెంబర్ 2026): ${attending ? `మేము ఆనందంగా వస్తున్నాము. మాతో కలిపి మొత్తం ${guests.value} మంది.` : 'మేము రాలేకపోతున్నాము. వధూవరులకు మా శుభాకాంక్షలు!'}`
+      : `Hello! This is ${name}. RSVP for Manidhip & Priyanka’s wedding on 3 December 2026: ${attending ? `Joyfully attending! Total guests including me: ${guests.value}.` : 'Unable to attend. Sending our love and best wishes!'}`;
+    const url = new URL('https://wa.me/');
+    url.searchParams.set('text', message);
+    window.open(url.href, '_blank', 'noopener,noreferrer');
+  });
+
+  const photoDialog = document.getElementById('photoDialog');
+  const expandedPhoto = document.getElementById('expandedPhoto');
+  document.querySelectorAll('[data-photo]').forEach(button => {
+    button.addEventListener('click', () => {
+      expandedPhoto.src = button.dataset.photo;
+      expandedPhoto.alt = button.querySelector('img').alt;
+      photoDialog.showModal();
+    });
+  });
+  document.getElementById('closePhotoBtn').addEventListener('click', () => photoDialog.close());
+  photoDialog.addEventListener('click', event => {
+    if (event.target === photoDialog) photoDialog.close();
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') { closeDirections(); closeSaveDate(); }
+  });
+  let savedLanguage = 'en';
+  try { savedLanguage = localStorage.getItem('wedding_language') || 'en'; } catch (e) {}
+  setLanguage(savedLanguage);
 })();

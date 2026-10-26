@@ -1,5 +1,5 @@
 /* ==========================================================================
-   VENKATA SAIKUMAR & ROHINI VARALAKSHMI — ROYAL WEDDING CELEBRATIONS
+   KAMMA MANIDHIP CHOWDARY & PRIYANKA — ROYAL WEDDING CELEBRATIONS
    InviteStory "Royal Emerald Green & 24K Gold Foil" Aesthetic System
    ========================================================================== */
 
@@ -604,7 +604,7 @@ button {
   line-height: 1.5;
 }
 
-/* Ornate Royal Frame for Saikumar & Rohini Real Photograph */
+/* Ornate Royal Frame for the Couple Portrait */
 .royal-couple-portrait-wrapper {
   position: relative;
   width: 100%;
@@ -1707,3 +1707,82 @@ button {
     bottom: 10px;
   }
 }
+
+/* A quieter, more spacious invitation. */
+.language-switch {
+  position: fixed;
+  top: max(12px, env(safe-area-inset-top));
+  right: max(12px, env(safe-area-inset-right));
+  z-index: 12000;
+  display: flex;
+  padding: 4px;
+  border: 1px solid rgba(232, 196, 108, .5);
+  border-radius: 30px;
+  background: #08251d;
+  box-shadow: 0 4px 18px #0003;
+}
+.language-switch button { min-height: 38px; padding: 7px 14px; border-radius: 24px; color: var(--text-cream); font: 600 12px var(--font-sans); }
+.language-switch button[aria-pressed="true"] { background: #eed49a; color: #08251d; }
+:focus-visible { outline: 3px solid #fff1bc; outline-offset: 5px; }
+.seal-content-card { margin-top: 65px; padding-bottom: 32px; }
+.seal-name-groom, .seal-name-bride { font-family: var(--font-classic); font-size: clamp(25px, 6.5vw, 33px); line-height: 1.35; letter-spacing: .3px; }
+.seal-subline { max-width: 290px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+.emerald-top-bar { padding-top: 72px; }
+.top-brand-info { min-width: 0; }
+.top-brand-text { min-width: 0; }
+.top-brand-text strong { white-space: normal; line-height: 1.55; font-size: 12px; }
+.emerald-section { margin-bottom: 30px; }
+.hero-section { padding: 28px 18px 30px; }
+.invitation-intro-text { text-transform: none; font: 400 17px/1.7 var(--font-classic); letter-spacing: .3px; max-width: 310px; margin-bottom: 30px; color: var(--text-cream); }
+.royal-couple-portrait-wrapper { max-width: 390px; padding: 4px; margin-bottom: 28px; }
+.real-couple-photo { filter: brightness(1.025) contrast(1.02) saturate(1.025); }
+.person-full-name { font-family: var(--font-classic); font-size: clamp(28px, 7vw, 36px); line-height: 1.3; overflow-wrap: anywhere; }
+.title-prefix { font-size: 12px; letter-spacing: 1px; }
+.family-descent { font-size: 17px; margin-top: 6px; }
+.sacred-union-tagline { max-width: 300px; margin: 24px auto; font-size: 18px; line-height: 1.7; }
+.event-card-surface { padding: 30px 22px; }
+.event-card-title, .emerald-section-title { font-family: var(--font-classic); font-size: 28px; line-height: 1.4; margin-bottom: 12px; }
+.event-sacred-mantra { line-height: 1.8; }
+.event-date-display { margin: 24px 0; padding: 20px 14px; }
+.date-large-day { font-size: 58px; margin: 10px 0; }
+.event-venue-info-box { margin-top: 22px; padding: 18px 14px; }
+.venue-location { line-height: 1.8; font-size: 15px; }
+.event-btn { min-height: 48px; line-height: 1.6; }
+.rituals-guide-section, .blessings-section, .moments-section, .rsvp-section { padding: 30px 22px; }
+.rituals-stack { gap: 16px; }
+.ritual-box { padding: 16px 12px; }
+.ritual-content p, .blessings-intro-text, .rituals-intro-text { font-size: 15px; line-height: 1.8; }
+.moments-section, .rsvp-section { border: 1px solid #d4af3766; border-radius: 20px; background: linear-gradient(155deg,#113d2d,#08271c); }
+.section-description { text-align: center; font-size: 16px; line-height: 1.8; color: var(--text-muted); margin: 0 auto 24px; }
+.moments-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.moment-photo { display: block; min-width: 0; text-align: left; color: var(--text-cream); }
+.moment-photo img { width: 100%; height: auto; aspect-ratio: 2/3; object-fit: cover; border-radius: 80px 80px 12px 12px; border: 1px solid #e8c46c88; }
+.moment-photo span { display: block; padding-top: 10px; text-align: center; font-size: 16px; }
+.rsvp-fields { display: grid; grid-template-columns: 1.2fr 1fr; gap: 12px; }
+.rsvp-fields > * { min-width: 0; }
+.rsvp-note { font-size: 13px; margin: 4px 0 0; }
+.form-input-group label { font-size: 11px; text-transform: none; line-height: 1.6; }
+.form-input-group input, .form-input-group select { min-height: 48px; }
+.photo-dialog { margin: auto; width: min(94vw, 650px); max-height: 92dvh; padding: 8px; border: 1px solid #e8c46c; border-radius: 18px; background: #062018; color: white; }
+.photo-dialog::backdrop { background: #020f0aeb; }
+.photo-dialog img { display: block; width: 100%; max-height: 85dvh; object-fit: contain; border-radius: 12px; }
+.photo-dialog button { position: absolute; right: 16px; top: 16px; width: 44px; height: 44px; border-radius: 50%; background: #062018e6; color: white; font-size: 30px; }
+html[lang="te"] { --font-royal: 'Noto Sans Telugu', sans-serif; --font-classic: 'Noto Sans Telugu', sans-serif; --font-body: 'Noto Sans Telugu', sans-serif; --font-sans: 'Noto Sans Telugu', sans-serif; }
+html[lang="te"] .person-full-name { font-size: clamp(24px, 6vw, 30px); line-height: 1.7; }
+html[lang="te"] .seal-name-groom, html[lang="te"] .seal-name-bride { font-size: 26px; line-height: 1.8; }
+html[lang="te"] .event-card-title, html[lang="te"] .emerald-section-title { font-size: 24px; }
+html[lang="te"] .section-kicker-gold, html[lang="te"] .cd-title-badge { letter-spacing: 0; line-height: 1.8; }
+.seal-pulse-glow { animation-duration: 4s; }
+.tap-seal-instruction { animation: none; }
+@media (max-width: 360px) {
+  .event-card-surface, .moments-section, .rsvp-section, .blessings-section { padding-left: 16px; padding-right: 16px; }
+  .rsvp-fields { grid-template-columns: 1fr; }
+  .cd-slot { min-width: 42px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .petals-canvas { display: none; }
+}
+
+[hidden] { display: none !important; }

@@ -30,16 +30,20 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Cinzel+Decorative:wght@700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Marcellus&family=Montserrat:wght@300;400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Cinzel+Decorative:wght@700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Marcellus&family=Noto+Sans+Telugu:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=6">
 </head>
 
 <body class="seal-locked">
+  <div class="language-switch" role="group" aria-label="Choose language / భాష ఎంచుకోండి">
+    <button type="button" data-language="en" aria-pressed="true">English</button>
+    <button type="button" data-language="te" aria-pressed="false" lang="te">తెలుగు</button>
+  </div>
 
   <!-- Background Music Player (Visa Vintara Saradaga) -->
-  <audio id="weddingAudio" src="visa_vintara_saradaga.mp3" preload="auto" loop></audio>
+  <audio id="weddingAudio" src="visa_vintara_saradaga.mp3" preload="none" loop></audio>
 
   <!-- Floating Sacred Akshata & Petal Physics Canvas -->
   <canvas id="petalsCanvas" class="petals-canvas" aria-hidden="true"></canvas>
@@ -91,20 +95,20 @@
       <!-- Sacred Invocations -->
       <p class="seal-shloka">॥ శ్రీరస్తు · శుభమస్తు · అవిఘ్నమస్తు ॥</p>
 
-      <span class="seal-kicker">KAMMA FAMILY · <span lang="te">కమ్మ కుటుంబం</span></span>
+      <span class="seal-kicker"><span data-en="Kamma Family" data-te="కమ్మ కుటుంబం">Kamma Family</span></span>
 
       <!-- Names in Royal Gold Typography -->
       <div class="seal-names-wrap">
-        <h1 class="seal-name-groom">Kamma Manidhip Chowdary</h1>
+        <h1 class="seal-name-groom" data-en="Kamma Manidhip Chowdary" data-te="కమ్మ మణిదీప్ చౌదరి">Kamma Manidhip Chowdary</h1>
         <div class="seal-ampersand-row">
           <span class="amp-line"></span>
           <span class="amp-symbol">&amp;</span>
           <span class="amp-line"></span>
         </div>
-        <h1 class="seal-name-bride">Priyanka</h1>
+        <h1 class="seal-name-bride" data-en="Priyanka" data-te="ప్రియాంక">Priyanka</h1>
       </div>
 
-      <p class="seal-subline">Together with their families, invite you to celebrate their sacred union</p>
+      <p class="seal-subline" data-en="Together with their families, invite you to celebrate their sacred union" data-te="కుటుంబ సభ్యులతో కలిసి మా వివాహ వేడుకకు మిమ్మల్ని సాదరంగా ఆహ్వానిస్తున్నాము">Together with their families, invite you to celebrate their sacred union</p>
 
       <!-- Royal Golden Wax Seal Button (Exact InviteStory Style) -->
       <div class="wax-seal-button" id="waxSealBtn" role="button" tabindex="0"
@@ -119,13 +123,13 @@
         <div class="seal-pulse-glow"></div>
       </div>
 
-      <p class="tap-seal-instruction">TAP THE SEAL TO OPEN</p>
+      <p class="tap-seal-instruction" data-en="TAP THE SEAL TO OPEN" data-te="ఆహ్వానం తెరవడానికి సీల్‌ను తాకండి">TAP THE SEAL TO OPEN</p>
 
       <!-- Events Preview Ribbon -->
       <div class="seal-events-preview">
         <div class="preview-item">
-          <strong>3 December 2026</strong>
-          <span>Wedding · <span lang="te">శుభ వివాహం</span></span>
+          <strong data-en="3 December 2026" data-te="3 డిసెంబర్ 2026">3 December 2026</strong>
+          <span><span data-en="Wedding Invitation" data-te="శుభ వివాహ ఆహ్వానం">Wedding Invitation</span></span>
           <span lang="te">3 డిసెంబర్ 2026 · గురువారం</span>
         </div>
       </div>
@@ -160,8 +164,8 @@
       <div class="top-brand-info">
         <span class="top-brand-crest">MP</span>
         <div class="top-brand-text">
-          <strong>Kamma Manidhip Chowdary ♥ Priyanka</strong>
-          <small>Wedding Celebrations</small>
+          <strong data-en="Kamma Manidhip Chowdary ♥ Priyanka" data-te="కమ్మ మణిదీప్ చౌదరి ♥ ప్రియాంక">Kamma Manidhip Chowdary ♥ Priyanka</strong>
+          <small data-en="Wedding Celebrations" data-te="వివాహ వేడుకలు">Wedding Celebrations</small>
         </div>
       </div>
 
@@ -215,8 +219,8 @@
           </svg>
         </div>
 
-        <p class="invitation-intro-text">
-          TOGETHER WITH OUR FAMILIES, WE CORDIALLY INVITE YOU TO CELEBRATE THE SACRED WEDDING OF
+        <p class="invitation-intro-text" data-en="Together with our families, we invite you to celebrate our wedding" data-te="మా కుటుంబ సభ్యులతో కలిసి మా శుభ వివాహానికి మిమ్మల్ని సాదరంగా ఆహ్వానిస్తున్నాము">
+          Together with our families, we invite you to celebrate our wedding
         </p>
 
         <!-- Ornate Golden Jharokha Arch Frame (Manidhip & Priyanka Real Photograph) -->
@@ -228,7 +232,7 @@
           <div class="jharokha-portrait-frame">
             <div class="frame-filigree-border"></div>
             <!-- REAL PHOTOGRAPH OF MANIDHIP & PRIYANKA -->
-            <img src="couple.png?v=4" alt="Kamma Manidhip Chowdary and Priyanka — Bride & Groom"
+            <img src="couple-portrait.jpg" width="800" height="1200" fetchpriority="high" alt="Kamma Manidhip Chowdary and Priyanka — Bride & Groom"
               class="real-couple-photo" id="couplePhoto" loading="eager">
             <div class="photo-monogram-badge">
               <span>MP</span>
@@ -243,50 +247,50 @@
         <!-- Royal Names Display -->
         <div class="royal-names-container">
           <div class="name-block groom-block">
-            <span class="title-prefix">Groom · <span lang="te">పెళ్లికొడుకు</span></span>
-            <h1 class="person-full-name">Kamma Manidhip Chowdary</h1>
+            <span class="title-prefix"><span data-en="Groom" data-te="పెళ్లికొడుకు">Groom</span></span>
+            <h1 class="person-full-name" data-en="Kamma Manidhip Chowdary" data-te="కమ్మ మణిదీప్ చౌదరి">Kamma Manidhip Chowdary</h1>
             <p class="family-descent"><span lang="te">కమ్మ మణిదీప్ చౌదరి</span></p>
           </div>
 
           <div class="weds-script-divider">
             <span class="script-line"></span>
-            <span class="weds-calligraphy">weds</span>
+            <span class="weds-calligraphy" data-en="weds" data-te="పరిణయం">weds</span>
             <span class="script-line"></span>
           </div>
 
           <div class="name-block bride-block">
-            <span class="title-prefix">Bride · <span lang="te">పెళ్లికూతురు</span></span>
-            <h1 class="person-full-name">Priyanka</h1>
+            <span class="title-prefix"><span data-en="Bride" data-te="పెళ్లికూతురు">Bride</span></span>
+            <h1 class="person-full-name" data-en="Priyanka" data-te="ప్రియాంక">Priyanka</h1>
             <p class="family-descent"><span lang="te">ప్రియాంక</span></p>
           </div>
         </div>
 
-        <p class="sacred-union-tagline">
-          “Two Souls Bound by Destiny, United in Sacred Matrimony for Seven Lifetimes”
+        <p class="sacred-union-tagline" data-en="With you beside us, our celebration is complete." data-te="మీ రాకతో మా వేడుకకు నిండుదనం.">
+          With you beside us, our celebration is complete.
         </p>
 
         <!-- Live Muhurtham Countdown -->
         <div class="emerald-countdown-card" id="countdownBox">
-          <span class="cd-title-badge">⏳ COUNTDOWN TO THE WEDDING</span>
+          <span class="cd-title-badge" data-en="⏳ COUNTDOWN TO THE WEDDING" data-te="⏳ వివాహ వేడుకకు మిగిలిన సమయం">⏳ COUNTDOWN TO THE WEDDING</span>
           <div class="cd-units-flex">
             <div class="cd-slot">
               <strong id="cdDays">00</strong>
-              <small>Days</small>
+              <small data-en="Days" data-te="రోజులు">Days</small>
             </div>
             <div class="cd-dots">:</div>
             <div class="cd-slot">
               <strong id="cdHours">00</strong>
-              <small>Hours</small>
+              <small data-en="Hours" data-te="గంటలు">Hours</small>
             </div>
             <div class="cd-dots">:</div>
             <div class="cd-slot">
               <strong id="cdMins">00</strong>
-              <small>Mins</small>
+              <small data-en="Mins" data-te="నిమిషాలు">Mins</small>
             </div>
             <div class="cd-dots">:</div>
             <div class="cd-slot">
               <strong id="cdSecs">00</strong>
-              <small>Secs</small>
+              <small data-en="Secs" data-te="క్షణాలు">Secs</small>
             </div>
           </div>
         </div>
@@ -305,7 +309,7 @@
             <span>SUBHA VIVAHAM &middot; శుభ వివాహం</span>
           </div>
 
-          <h2 class="event-card-title">The Sacred Wedding Ceremony</h2>
+          <h2 class="event-card-title" data-en="The Sacred Wedding Ceremony" data-te="మా శుభ వివాహం">The Sacred Wedding Ceremony</h2>
           <p class="event-card-telugu">కల్యాణ మహోత్సవం &middot; సుముహూర్తం</p>
           <p class="event-sacred-mantra">
             ॥ माङ्गल्यं तन्तुनानेन मम जीवनहेतुना । कण्ठे बध्नामि सुभगे सञ्जीव शरदः शतम् ॥
@@ -313,18 +317,18 @@
 
           <!-- Date Highlight Box -->
           <div class="event-date-display vivaham-date-display">
-            <span class="date-weekday">THURSDAY</span>
+            <span class="date-weekday" data-en="THURSDAY" data-te="గురువారం">THURSDAY</span>
             <div class="date-large-day">03</div>
-            <span class="date-month-year">DECEMBER 2026</span>
+            <span class="date-month-year" data-en="DECEMBER 2026" data-te="డిసెంబర్ 2026">DECEMBER 2026</span>
             <span class="date-ritual-context"><span lang="te">3 డిసెంబర్ 2026 · గురువారం</span></span>
           </div>
 
           <!-- Muhurtham Golden Spotlight -->
           <div class="muhurtham-gold-spotlight">
-            <span class="spotlight-header">AUSPICIOUS SUMUHURTHAM</span>
+            <span class="spotlight-header" data-en="AUSPICIOUS SUMUHURTHAM" data-te="శుభ ముహూర్తం">AUSPICIOUS SUMUHURTHAM</span>
             <div class="spotlight-time-wrap">
               <span class="spark-star">✨</span>
-              <strong class="muhurtham-exact-time">To be announced</strong>
+              <strong class="muhurtham-exact-time" data-en="To be announced" data-te="త్వరలో తెలియజేస్తాము">To be announced</strong>
               <span class="spark-star">✨</span>
             </div>
             <span class="spotlight-subtext"><span lang="te">ముహూర్తం సమయం త్వరలో తెలియజేస్తాము</span></span>
@@ -334,10 +338,10 @@
           <div class="event-venue-info-box">
             <div class="venue-symbol">🛕</div>
             <div class="venue-details">
-              <strong class="venue-title">Botlagudur Village</strong>
-              <p class="venue-location">Pamur Mandal, Markapuram District, Andhra Pradesh</p>
+              <strong class="venue-title" data-en="Botlagudur Village" data-te="బొట్లగూడూరు గ్రామం">Botlagudur Village</strong>
+              <p class="venue-location" data-en="Pamur Mandal, Markapuram District, Andhra Pradesh" data-te="పామూరు మండలం, మార్కాపురం జిల్లా, ఆంధ్రప్రదేశ్">Pamur Mandal, Markapuram District, Andhra Pradesh</p>
               <p class="venue-location" lang="te">బొట్లగూడూరు గ్రామం, పామూరు మండలం, మార్కాపురం జిల్లా, ఆంధ్రప్రదేశ్</p>
-              <span class="venue-attire">🥻 Traditional Silk / Festive Attire (Pattu Sarees, Kurta &amp; Dhoti)</span>
+              <span class="venue-attire" data-en="🥻 Traditional Silk / Festive Attire (Pattu Sarees, Kurta &amp; Dhoti)" data-te="🥻 సాంప్రదాయ వస్త్రధారణ: పట్టు చీరలు, కుర్తా, పంచె">🥻 Traditional Silk / Festive Attire (Pattu Sarees, Kurta &amp; Dhoti)</span>
             </div>
           </div>
 
@@ -345,12 +349,12 @@
           <div class="event-actions-flex">
             <a href="https://www.google.com/maps/search/?api=1&query=Botlagudur+Village+Pamur+Mandal+Markapuram+District"
               target="_blank" rel="noopener" class="event-btn primary-map-btn">
-              <span>📍 Directions to Botlagudur Village</span>
+              <span data-en="📍 Directions to Botlagudur Village" data-te="📍 బొట్లగూడూరు గ్రామానికి దారి">📍 Directions to Botlagudur Village</span>
               <span class="external-icon">↗</span>
             </a>
 
             <button class="event-btn outline-cal-btn" id="calendarMuhurthamBtn">
-              <span>📅 Add Wedding to Calendar</span>
+              <span data-en="📅 Add Wedding to Calendar" data-te="📅 వివాహ తేదీని క్యాలెండర్‌లో చేర్చండి">📅 Add Wedding to Calendar</span>
             </button>
           </div>
 
@@ -362,9 +366,9 @@
            SACRED TELUGU RITUALS (ఆచారాలు & సంప్రదాయాలు)
            ===================================================================== -->
       <section class="emerald-section rituals-guide-section" id="rituals">
-        <div class="section-kicker-gold">TELUGU VIVAHA VEDUKA &middot; ఆచారాలు &amp; సంప్రదాయాలు</div>
-        <h2 class="emerald-section-title">Sacred Wedding Traditions</h2>
-        <p class="rituals-intro-text">
+        <div class="section-kicker-gold"><span data-en="THE TRADITIONS THAT UNITE US" data-te="మనల్ని కలిపే సంప్రదాయాలు">THE TRADITIONS THAT UNITE US</span></div>
+        <h2 class="emerald-section-title" data-en="Sacred Wedding Traditions" data-te="మన వివాహ సంప్రదాయాలు">Sacred Wedding Traditions</h2>
+        <p class="rituals-intro-text" data-en="Every sacred ritual in our Telugu Vivaham carries profound timeless meaning, uniting two families and two souls for seven lifetimes." data-te="మన తెలుగు వివాహంలోని ప్రతి ఆచారం రెండు కుటుంబాలను, రెండు మనసులను ఏడు జన్మల బంధంతో ఒక్కటి చేస్తుంది.">
           Every sacred ritual in our Telugu Vivaham carries profound timeless meaning, uniting two families and two
           souls for seven lifetimes.
         </p>
@@ -373,8 +377,8 @@
           <div class="ritual-box">
             <span class="ritual-index">01</span>
             <div class="ritual-content">
-              <strong>Mangala Snanam &amp; Pasupu (మంగళ స్నానం)</strong>
-              <p>Purification with pure turmeric, fragrant holy waters, and sandalwood for divine grace and golden
+              <strong data-en="Mangala Snanam &amp; Pasupu (మంగళ స్నానం)" data-te="మంగళ స్నానం &amp; పసుపు">Mangala Snanam &amp; Pasupu (మంగళ స్నానం)</strong>
+              <p data-en="Purification with pure turmeric, fragrant holy waters, and sandalwood for divine grace and golden radiance." data-te="పసుపు, సుగంధ జలాలు, గంధంతో మంగళ స్నానం చేసి దైవ ఆశీస్సులు పొందుతారు.">Purification with pure turmeric, fragrant holy waters, and sandalwood for divine grace and golden
                 radiance.</p>
             </div>
           </div>
@@ -382,8 +386,8 @@
           <div class="ritual-box">
             <span class="ritual-index">02</span>
             <div class="ritual-content">
-              <strong>Gauri Pooja &amp; Kanyadaanam (కన్యాదానం)</strong>
-              <p>Invoking Goddess Gauri, followed by parents lovingly placing the bride’s hand into the groom’s hand as
+              <strong data-en="Gauri Pooja &amp; Kanyadaanam (కన్యాదానం)" data-te="గౌరీ పూజ &amp; కన్యాదానం">Gauri Pooja &amp; Kanyadaanam (కన్యాదానం)</strong>
+              <p data-en="Invoking Goddess Gauri, followed by parents lovingly placing the bride’s hand into the groom’s hand as Lord Narayana." data-te="గౌరీ దేవిని పూజించి, తల్లిదండ్రులు వధువు చేతిని వరుని చేతిలో ఉంచి కన్యాదానం చేస్తారు.">Invoking Goddess Gauri, followed by parents lovingly placing the bride’s hand into the groom’s hand as
                 Lord Narayana.</p>
             </div>
           </div>
@@ -391,8 +395,8 @@
           <div class="ritual-box highlighted-ritual-box">
             <span class="ritual-index">03</span>
             <div class="ritual-content">
-              <strong>Jeelakarra Bellam (జీలకర్ర బెల్లం)</strong>
-              <p>At the exact Muhurtham, cumin and jaggery paste are placed on each other’s heads, symbolizing an
+              <strong data-en="Jeelakarra Bellam (జీలకర్ర బెల్లం)" data-te="జీలకర్ర బెల్లం">Jeelakarra Bellam (జీలకర్ర బెల్లం)</strong>
+              <p data-en="At the exact Muhurtham, cumin and jaggery paste are placed on each other’s heads, symbolizing an eternal, inseparable union." data-te="శుభ ముహూర్తంలో వధూవరులు ఒకరి తలపై మరొకరు జీలకర్ర బెల్లం ఉంచుతారు. ఇది విడదీయలేని అనుబంధానికి చిహ్నం.">At the exact Muhurtham, cumin and jaggery paste are placed on each other’s heads, symbolizing an
                 eternal, inseparable union.</p>
             </div>
           </div>
@@ -400,8 +404,8 @@
           <div class="ritual-box">
             <span class="ritual-index">04</span>
             <div class="ritual-content">
-              <strong>Mangalyadharana &amp; Saptapadi (మాంగళ్యధారణ)</strong>
-              <p>Tying the sacred golden Mangalasutrams with three eternal knots, followed by seven sacred steps around
+              <strong data-en="Mangalyadharana &amp; Saptapadi (మాంగళ్యధారణ)" data-te="మాంగళ్యధారణ &amp; సప్తపది">Mangalyadharana &amp; Saptapadi (మాంగళ్యధారణ)</strong>
+              <p data-en="Tying the sacred golden Mangalasutrams with three eternal knots, followed by seven sacred steps around the holy fire." data-te="మూడు ముళ్లతో మంగళసూత్రం కట్టి, పవిత్ర అగ్ని సాక్షిగా ఏడు అడుగులు వేస్తారు.">Tying the sacred golden Mangalasutrams with three eternal knots, followed by seven sacred steps around
                 the holy fire.</p>
             </div>
           </div>
@@ -411,47 +415,56 @@
       <!-- =====================================================================
            OUR STORY / BANDHAM (బంధం)
            ===================================================================== -->
-      <section class="emerald-section story-section" id="story">
-        <div class="section-kicker-gold">A BEAUTIFUL JOURNEY &middot; ప్రేమ బంధం</div>
-        <h2 class="emerald-section-title">Our Story &middot; Bandham</h2>
-
-        <div class="story-vertical-steps">
-          <div class="step-row">
-            <div class="step-num-badge">01</div>
-            <div class="step-card-body">
-              <h4>Destined Paths Crossed</h4>
-              <p>With the blessings of our elders, our families met. What began with warm conversations blossomed into
-                deep mutual respect, understanding, and friendship.</p>
-            </div>
-          </div>
-
-          <div class="step-row">
-            <div class="step-num-badge">02</div>
-            <div class="step-card-body">
-              <h4>Two Hearts, One Rhythm</h4>
-              <p>Sharing values, dreams for tomorrow, and laughter, we realized that God had woven our lives together
-                into a harmonious lifelong tapestry.</p>
-            </div>
-          </div>
-
-          <div class="step-row">
-            <div class="step-num-badge">03</div>
-            <div class="step-card-body">
-              <h4>Our Forever Begins</h4>
-              <p>Surrounded by our loved ones and divine grace, we celebrate our wedding ceremonies to step into a
-                blessed, joy-filled lifetime together.</p>
-            </div>
-          </div>
+      <section class="emerald-section moments-section" id="moments">
+        <p class="section-kicker-gold" data-en="A LITTLE OF US" data-te="మా జ్ఞాపకాలు">A LITTLE OF US</p>
+        <h2 class="emerald-section-title" data-en="Our Moments" data-te="మధుర క్షణాలు">Our Moments</h2>
+        <p class="section-description" data-en="A few memories, a lifetime ahead. Tap a photo to view it." data-te="కొన్ని జ్ఞాపకాలు, ముందున్న అందమైన జీవితం. ఫోటోను పెద్దగా చూడటానికి తాకండి.">A few memories, a lifetime ahead. Tap a photo to view it.</p>
+        <div class="moments-grid">
+          <button type="button" class="moment-photo" data-photo="couple-portrait.jpg" aria-label="View celebration portrait">
+            <img src="couple-portrait.jpg" width="800" height="1200" loading="lazy" decoding="async" alt="Manidhip and Priyanka in traditional celebration attire">
+            <span data-en="Our celebration" data-te="మా వేడుక">Our celebration</span>
+          </button>
+          <button type="button" class="moment-photo" data-photo="couple-moment.jpg" aria-label="View a moment together">
+            <img src="couple-moment.jpg" width="667" height="1000" loading="lazy" decoding="async" alt="Manidhip and Priyanka together at a family celebration">
+            <span data-en="Together" data-te="మన బంధం">Together</span>
+          </button>
         </div>
+      </section>
+
+      <section class="emerald-section rsvp-section" id="rsvp">
+        <p class="section-kicker-gold" data-en="WE SAVED YOU A PLACE" data-te="మీ రాక కోసం ఎదురుచూస్తున్నాము">WE SAVED YOU A PLACE</p>
+        <h2 class="emerald-section-title" data-en="Will you join us?" data-te="మా వేడుకకు వస్తారా?">Will you join us?</h2>
+        <p class="section-description" data-en="We would love to celebrate with you. Send your reply to a family member on WhatsApp." data-te="మీతో కలిసి వేడుక జరుపుకోవాలని ఆశిస్తున్నాము. మీ సమాధానాన్ని వాట్సాప్‌లో కుటుంబ సభ్యులకు పంపండి.">We would love to celebrate with you. Send your reply to a family member on WhatsApp.</p>
+        <form id="rsvpForm" class="emerald-blessing-form">
+          <div class="form-input-group">
+            <label for="rsvpName" data-en="Your name" data-te="మీ పేరు">Your name</label>
+            <input id="rsvpName" name="name" autocomplete="name" required maxlength="80">
+          </div>
+          <div class="rsvp-fields">
+            <div class="form-input-group">
+              <label for="rsvpAttendance" data-en="Your reply" data-te="మీ సమాధానం">Your reply</label>
+              <select id="rsvpAttendance" name="attendance">
+                <option value="yes" data-en="Joyfully attending" data-te="ఆనందంగా వస్తున్నాము">Joyfully attending</option>
+                <option value="no" data-en="Unable to attend" data-te="రాలేకపోతున్నాము">Unable to attend</option>
+              </select>
+            </div>
+            <div class="form-input-group" id="rsvpGuestsGroup">
+              <label for="rsvpGuests" data-en="Guests including you" data-te="మీతో కలిపి అతిథుల సంఖ్య">Guests including you</label>
+              <input id="rsvpGuests" name="guests" type="number" min="1" max="50" value="1" required>
+            </div>
+          </div>
+          <button type="submit" class="submit-blessing-button" data-en="Reply on WhatsApp ↗" data-te="వాట్సాప్‌లో సమాధానం పంపండి ↗">Reply on WhatsApp ↗</button>
+          <p class="section-description rsvp-note" data-en="Choose a family chat in WhatsApp and send the message to confirm your reply." data-te="వాట్సాప్‌లో కుటుంబ సభ్యుల చాట్‌ను ఎంచుకుని సందేశాన్ని పంపండి.">Choose a family chat in WhatsApp and send the message to confirm your reply.</p>
+        </form>
       </section>
 
       <!-- =====================================================================
            AASHIRWADAM (GUEST BLESSINGS WALL)
            ===================================================================== -->
       <section class="emerald-section blessings-section" id="blessings">
-        <div class="section-kicker-gold">BESTOW YOUR DIVINE BLESSINGS &middot; ఆశీర్వదించండి</div>
-        <h2 class="emerald-section-title">Aashirwadam &middot; Blessings Wall</h2>
-        <p class="blessings-intro-text">
+        <div class="section-kicker-gold"><span data-en="WITH YOUR LOVE AND BLESSINGS" data-te="మీ ప్రేమ మరియు ఆశీస్సులతో">WITH YOUR LOVE AND BLESSINGS</span></div>
+        <h2 class="emerald-section-title" data-en="Aashirwadam · Blessings Wall" data-te="మీ ఆశీర్వాదాలు">Aashirwadam &middot; Blessings Wall</h2>
+        <p class="blessings-intro-text" data-en="Your heartfelt prayers and warm wishes (ఆశీస్సులు) are the divine foundation upon which our new journey will be built." data-te="మీ హృదయపూర్వక ఆశీస్సులు మా కొత్త జీవిత ప్రయాణానికి పునాది.">
           Your heartfelt prayers and warm wishes (ఆశీస్సులు) are the divine foundation upon which our new journey will
           be built.
         </p>
@@ -459,29 +472,29 @@
         <!-- Guest Blessing Form -->
         <form id="blessingForm" class="emerald-blessing-form">
           <div class="form-input-group">
-            <label for="guestName">Your Full Name <span class="asterisk">*</span></label>
+            <label for="guestName"><span data-en="Your Full Name" data-te="మీ పూర్తి పేరు">Your Full Name</span> <span class="asterisk">*</span></label>
             <input type="text" id="guestName" name="name" required maxlength="80"
               placeholder="Your name / మీ పేరు">
           </div>
 
           <div class="form-input-group">
-            <label for="guestRelation">Relationship</label>
+            <label for="guestRelation" data-en="Relationship" data-te="మీ అనుబంధం">Relationship</label>
             <select id="guestRelation" name="relation">
-              <option value="Family Elder">Family Elder &middot; పెద్దలు</option>
-              <option value="Family Member">Family Member &middot; కుటుంబ సభ్యులు</option>
-              <option value="Friend">Dear Friend &middot; స్నేహితులు</option>
-              <option value="Well-wisher" selected>Well-wisher &middot; ఆప్తమిత్రులు</option>
+              <option value="Family Elder" data-en="Family Elder · పెద్దలు" data-te="పెద్దలు">Family Elder &middot; పెద్దలు</option>
+              <option value="Family Member" data-en="Family Member · కుటుంబ సభ్యులు" data-te="కుటుంబ సభ్యులు">Family Member &middot; కుటుంబ సభ్యులు</option>
+              <option value="Friend" data-en="Dear Friend · స్నేహితులు" data-te="స్నేహితులు">Dear Friend &middot; స్నేహితులు</option>
+              <option value="Well-wisher" selected data-en="Well-wisher · ఆప్తమిత్రులు" data-te="ఆప్తమిత్రులు">Well-wisher &middot; ఆప్తమిత్రులు</option>
             </select>
           </div>
 
           <div class="form-input-group">
-            <label for="guestMessage">Your Blessing Message <span class="asterisk">*</span></label>
+            <label for="guestMessage"><span data-en="Your Blessing Message" data-te="మీ ఆశీస్సులు">Your Blessing Message</span> <span class="asterisk">*</span></label>
             <textarea id="guestMessage" name="message" rows="3" required maxlength="500"
               placeholder="May Lord Venkateswara &amp; Sri Satyanarayana Swamy shower Manidhip &amp; Priyanka with eternal health, happiness, and prosperity..."></textarea>
           </div>
 
           <button type="submit" class="submit-blessing-button">
-            <span>🌸 Bestow Blessings ✦ ఆశీర్వదించండి</span>
+            <span data-en="🌸 Bestow Blessings ✦ ఆశీర్వదించండి" data-te="🌸 మీ ఆశీర్వాదాలు అందించండి">🌸 Bestow Blessings ✦ ఆశీర్వదించండి</span>
           </button>
         </form>
 
@@ -511,18 +524,18 @@
         <p class="footer-shanti">॥ ॐ శాంతిః శాంతిః శాంతిః ॥</p>
 
         <div class="footer-gratitude-wrap">
-          <p class="gratitude-text">With love, reverence &amp; gratitude</p>
+          <p class="gratitude-text" data-en="With love, reverence &amp; gratitude" data-te="ప్రేమతో, గౌరవంతో, కృతజ్ఞతతో">With love, reverence &amp; gratitude</p>
           <h3 class="footer-couple-title">Kamma Manidhip Chowdary <span>♥</span> Priyanka</h3>
-          <p class="footer-families-mention">Kamma &amp; Extended Families</p>
+          <p class="footer-families-mention" data-en="Kamma &amp; Extended Families" data-te="కమ్మ కుటుంబం మరియు బంధుమిత్రులు">Kamma &amp; Extended Families</p>
         </div>
 
         <div class="footer-dates-badge">
-          <span>3 December 2026 · Botlagudur Village</span><br>
+          <span data-en="3 December 2026 · Botlagudur Village" data-te="3 డిసెంబర్ 2026 · బొట్లగూడూరు గ్రామం">3 December 2026 · Botlagudur Village</span><br>
           <span lang="te">3 డిసెంబర్ 2026 · బొట్లగూడూరు గ్రామం</span>
         </div>
 
         <button class="lock-seal-again-btn" id="reopenSealBtn">
-          <span>👑 View Royal Seal Again</span>
+          <span data-en="👑 View Royal Seal Again" data-te="👑 ఆహ్వానాన్ని మళ్లీ చూడండి">👑 View Royal Seal Again</span>
         </button>
       </footer>
 
@@ -535,25 +548,25 @@
       <!-- Save Date Button -->
       <button class="dock-action-btn" id="dockSaveBtn" aria-label="Save Wedding Date to Calendar">
         <span class="dock-action-icon">📅</span>
-        <span class="dock-action-text">Save Date</span>
+        <span class="dock-action-text" data-en="Save Date" data-te="తేదీ">Save Date</span>
       </button>
 
       <!-- Directions Button -->
       <button class="dock-action-btn" id="dockDirectionsBtn" aria-label="Get Directions to Wedding Location">
         <span class="dock-action-icon">📍</span>
-        <span class="dock-action-text">Directions</span>
+        <span class="dock-action-text" data-en="Directions" data-te="దారి">Directions</span>
       </button>
 
       <!-- Bless / Shower Akshatas Button -->
       <button class="dock-action-btn" id="dockShowerBtn" aria-label="Shower Sacred Akshatas and Petals">
         <span class="dock-action-icon">🌸</span>
-        <span class="dock-action-text">Bless</span>
+        <span class="dock-action-text" data-en="Bless" data-te="ఆశీస్సులు">Bless</span>
       </button>
 
       <!-- Music Toggle Pill -->
       <button class="dock-action-btn" id="dockMusicBtn" aria-label="Music Toggle">
         <span class="dock-action-icon" id="dockMusicIcon">🎵</span>
-        <span class="dock-action-text" id="dockMusicLabel">Music</span>
+        <span class="dock-action-text" id="dockMusicLabel" data-en="Music" data-te="సంగీతం">Music</span>
       </button>
     </aside>
 
@@ -568,10 +581,10 @@
     <div class="emerald-modal-dialog">
       <div class="dialog-top-bar">
         <span class="dialog-icon">📍</span>
-        <h3>Celebration Venue Directions</h3>
+        <h3 data-en="Celebration Venue Directions" data-te="వివాహ వేదికకు దారి">Celebration Venue Directions</h3>
         <button class="dialog-close-x" id="closeDirectionsBtn" aria-label="Close directions modal">&times;</button>
       </div>
-      <p class="dialog-subhead">Select an auspicious celebration to view Google Maps directions:</p>
+      <p class="dialog-subhead" data-en="Select an auspicious celebration to view Google Maps directions:" data-te="గూగుల్ మ్యాప్స్‌లో గ్రామానికి దారి చూడండి:">Select an auspicious celebration to view Google Maps directions:</p>
 
       <div class="venues-interactive-list">
 
@@ -580,10 +593,10 @@
           target="_blank" rel="noopener" class="venue-modal-card vivaham-venue-card">
           <div class="card-venue-icon">🛕</div>
           <div class="card-venue-text">
-            <strong>Subha Vivaham (Muhurtham)</strong>
-            <span class="v-place">Botlagudur Village, Pamur Mandal, Markapuram District</span>
+            <strong data-en="Subha Vivaham (Muhurtham)" data-te="శుభ వివాహం (ముహూర్తం)">Subha Vivaham (Muhurtham)</strong>
+            <span class="v-place" data-en="Botlagudur Village, Pamur Mandal, Markapuram District" data-te="బొట్లగూడూరు గ్రామం, పామూరు మండలం, మార్కాపురం జిల్లా">Botlagudur Village, Pamur Mandal, Markapuram District</span>
             <span class="v-place" lang="te">బొట్లగూడూరు గ్రామం, పామూరు మండలం, మార్కాపురం జిల్లా</span>
-            <small class="v-timing">Thursday, 3 December 2026 · Time to be announced</small>
+            <small class="v-timing" data-en="Thursday, 3 December 2026 · Time to be announced" data-te="గురువారం, 3 డిసెంబర్ 2026 · సమయం త్వరలో తెలియజేస్తాము">Thursday, 3 December 2026 · Time to be announced</small>
           </div>
           <span class="card-venue-arrow">↗</span>
         </a>
@@ -602,10 +615,10 @@
     <div class="emerald-modal-dialog">
       <div class="dialog-top-bar">
         <span class="dialog-icon">📅</span>
-        <h3>Save the Wedding Date</h3>
+        <h3 data-en="Save the Wedding Date" data-te="వివాహ తేదీని భద్రపరచుకోండి">Save the Wedding Date</h3>
         <button class="dialog-close-x" id="closeSaveDateBtn" aria-label="Close save date modal">&times;</button>
       </div>
-      <p class="dialog-subhead">Download calendar invites (.ics) for Apple, Google, or Outlook calendars:</p>
+      <p class="dialog-subhead" data-en="Download calendar invites (.ics) for Apple, Google, or Outlook calendars:" data-te="మీ క్యాలెండర్ కోసం వివాహ ఆహ్వానాన్ని డౌన్‌లోడ్ చేసుకోండి:">Download calendar invites (.ics) for Apple, Google, or Outlook calendars:</p>
 
       <div class="venues-interactive-list">
 
@@ -614,8 +627,8 @@
         <button class="venue-modal-card vivaham-venue-card" id="calDownloadMuhurthamBtn">
           <div class="card-venue-icon">🪔</div>
           <div class="card-venue-text">
-            <strong>Wedding · శుభ వివాహం</strong>
-            <span class="v-place">Thursday, 3 December 2026 · Botlagudur Village</span>
+            <strong data-en="Wedding · శుభ వివాహం" data-te="శుభ వివాహం">Wedding · శుభ వివాహం</strong>
+            <span class="v-place" data-en="Thursday, 3 December 2026 · Botlagudur Village" data-te="గురువారం, 3 డిసెంబర్ 2026 · బొట్లగూడూరు గ్రామం">Thursday, 3 December 2026 · Botlagudur Village</span>
           </div>
           <span class="card-venue-arrow">📥</span>
         </button>
@@ -625,7 +638,11 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <dialog id="photoDialog" class="photo-dialog" aria-label="Couple photo">
+    <button type="button" id="closePhotoBtn" aria-label="Close photo">×</button>
+    <img id="expandedPhoto" alt="Manidhip and Priyanka">
+  </dialog>
+  <script src="script.js?v=6"></script>
 </body>
 
 </html>
