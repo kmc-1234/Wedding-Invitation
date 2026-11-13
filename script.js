@@ -38,9 +38,9 @@
 
   // =========================================================================
   // 1. REAL-TIME MUHURTHAM COUNTDOWN
-  // Muhurtham: Thursday, 3 December 2026; ceremony time to be announced
+  // Muhurtham: Thursday, 3 December 2026 at 9:02 PM IST; window 8:55–9:12 PM IST
   // =========================================================================
-  const muhurthamDate = new Date('2026-12-03T00:00:00+05:30').getTime();
+  const muhurthamDate = new Date('2026-12-03T21:02:00+05:30').getTime();
   const elDays = document.getElementById('cdDays');
   const elHours = document.getElementById('cdHours');
   const elMins = document.getElementById('cdMins');
@@ -543,16 +543,16 @@
     'END:VEVENT'
   ].join('\r\n');
 
-  // All-day calendar entry until the family supplies a ceremony time.
+  // Calendar covers the confirmed 8:55–9:12 PM IST window; muhurtham is 9:02 PM.
   const MUHURTHAM_ICS_BLOCK = [
     'BEGIN:VEVENT',
     'UID:manidhip-priyanka-wedding-20261203@subhavivaham.in',
     `DTSTAMP:${new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d{3}Z$/, 'Z')}`,
-    'DTSTART;VALUE=DATE:20261203',
-    'DTEND;VALUE=DATE:20261204',
-    'SUMMARY:Wedding — Kamma Manidhip Chowdary & Priyanka',
+    'DTSTART:20261203T152500Z',
+    'DTEND:20261203T154200Z',
+    'SUMMARY:Wedding (Muhurtham 9:02 PM IST) — Kamma Manidhip Chowdary & Priyanka',
     'LOCATION:Botlagudur Village\\, Pamur Mandal\\, Markapuram District\\, Andhra Pradesh',
-    'DESCRIPTION:శుభ వివాహం — కమ్మ మణిదీప్ చౌదరి మరియు ప్రియాంక.\\nబొట్లగూడూరు గ్రామం\\, పామూరు మండలం\\, మార్కాపురం జిల్లా.\\nCeremony time to be announced.',
+    'DESCRIPTION:శుభ వివాహం — కమ్మ మణిదీప్ చౌదరి మరియు ప్రియాంక.\\nబొట్లగూడూరు గ్రామం\\, పామూరు మండలం\\, మార్కాపురం జిల్లా.\\nMuhurtham: 3 December 2026 at 9:02 PM IST. Window: 8:55–9:12 PM IST. ముహూర్తం: రాత్రి 9:02 గంటలకు. శుభ సమయం: రాత్రి 8:55 నుండి 9:12 వరకు.',
     'STATUS:CONFIRMED',
     'END:VEVENT'
   ].join('\r\n');
@@ -699,8 +699,8 @@
     if (!name) { document.getElementById('rsvpName').focus(); return; }
     const attending = attendance.value === 'yes';
     const message = language === 'te'
-      ? `నమస్కారం! నేను ${name}. మణిదీప్ మరియు ప్రియాంక వివాహం (3 డిసెంబర్ 2026): ${attending ? `మేము ఆనందంగా వస్తున్నాము. మాతో కలిపి మొత్తం ${guests.value} మంది.` : 'మేము రాలేకపోతున్నాము. వధూవరులకు మా శుభాకాంక్షలు!'}`
-      : `Hello! This is ${name}. RSVP for Manidhip & Priyanka’s wedding on 3 December 2026: ${attending ? `Joyfully attending! Total guests including me: ${guests.value}.` : 'Unable to attend. Sending our love and best wishes!'}`;
+      ? `నమస్కారం! నేను ${name}. మణిదీప్ మరియు ప్రియాంక వివాహం (3 డిసెంబర్ 2026 రాత్రి 9:02 గంటలకు): ${attending ? `మేము ఆనందంగా వస్తున్నాము. మాతో కలిపి మొత్తం ${guests.value} మంది.` : 'మేము రాలేకపోతున్నాము. వధూవరులకు మా శుభాకాంక్షలు!'}`
+      : `Hello! This is ${name}. RSVP for Manidhip & Priyanka’s wedding on 3 December 2026 at 9:02 PM IST: ${attending ? `Joyfully attending! Total guests including me: ${guests.value}.` : 'Unable to attend. Sending our love and best wishes!'}`;
     const url = new URL('https://wa.me/');
     url.searchParams.set('text', message);
     window.open(url.href, '_blank', 'noopener,noreferrer');

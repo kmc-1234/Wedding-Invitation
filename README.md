@@ -13,9 +13,10 @@ A mobile-friendly wedding invitation in emerald green and gold, built with HTML,
 - **వివాహ తేదీ:** గురువారం, 3 డిసెంబర్ 2026
 - **Address:** Botlagudur Village, Pamur Mandal, Markapuram District, Andhra Pradesh
 - **చిరునామా:** బొట్లగూడూరు గ్రామం, పామూరు మండలం, మార్కాపురం జిల్లా, ఆంధ్రప్రదేశ్
-- **Ceremony time:** To be announced / ముహూర్తం సమయం త్వరలో తెలియజేస్తాము
+- **Muhurtham:** 3 December 2026 at 9:02 PM IST / రాత్రి 9:02 గంటలకు
+- **Muhurtham window:** 8:55–9:12 PM IST / రాత్రి 8:55 నుండి 9:12 వరకు
 
-The supplied Haldi and wedding dates are shown. Haldi has a timed calendar invite beginning at 8:00 AM IST, with no invented end time or venue. The previous template’s unrelated event schedules have been removed. Calendar downloads save the wedding as an all-day event until a ceremony time is supplied. The countdown uses the start of the wedding date in Indian Standard Time.
+The supplied Haldi and wedding dates are shown. Haldi has a timed calendar invite beginning at 8:00 AM IST, with no invented end time or venue. The previous template’s unrelated event schedules have been removed. The wedding calendar invite covers the confirmed 8:55–9:12 PM IST muhurtham window and states the exact muhurtham at 9:02 PM IST. The countdown targets 3 December 2026 at 9:02 PM IST.
 
 ## Photos and music
 
@@ -31,7 +32,7 @@ python3 -m http.server 8000
 
 Open http://localhost:8000.
 
-The invitation includes an opening seal, music controls, flower effects, directions to the supplied village, an all-day calendar download, and a blessings wall stored locally in each guest’s browser.
+The invitation includes an opening seal, music controls, flower effects, directions to the supplied village, timed calendar downloads, and a blessings wall stored locally in each guest’s browser.
 
 ## Personal touches
 
@@ -41,4 +42,4 @@ The invitation includes an opening seal, music controls, flower effects, directi
 - RSVP form opens a WhatsApp draft. Guests select a family chat and send their reply; replies are not stored or sent automatically. A family WhatsApp number can be added when supplied.
 - Gentler flower effects, reduced-motion support, and music loaded only when needed.
 
-The exact ceremony time and venue pin still need confirmation. Directions currently search for the supplied village.
+The exact venue pin still needs confirmation. Directions currently search for the supplied village.
