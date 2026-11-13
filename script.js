@@ -1,5 +1,5 @@
 /**
- * KAMMA MANIDHIP CHOWDARY & PRIYANKA — ROYAL WEDDING CELEBRATIONS
+ * KAMMA MANIDEEP CHOWDARY & PRIYANKA CHOWDARY — ROYAL WEDDING CELEBRATIONS
  * Interactive Engine:
  * - Royal Wax Seal Unlock Screen (InviteStory Reel Signature)
  * - Auspicious Indian Web Audio Synthesizer (Tanpura, Flute & Temple Bell)
@@ -27,7 +27,7 @@
     });
     try { localStorage.setItem('wedding_language', language); } catch (e) {}
     const message = document.getElementById('guestMessage');
-    if (message) message.placeholder = language === 'te' ? 'మీ ఆశీస్సులు ఇక్కడ రాయండి' : 'Your warm wishes for Manidhip and Priyanka…';
+    if (message) message.placeholder = language === 'te' ? 'మీ ఆశీస్సులు ఇక్కడ రాయండి' : 'Your warm wishes for Manideep and Priyanka…';
     updateCountdown();
     updateMusicLabel();
   }
@@ -534,25 +534,46 @@
   // 8:00 AM IST = 02:30 UTC. No end time was supplied.
   const HALDI_ICS_BLOCK = [
     'BEGIN:VEVENT',
-    'UID:manidhip-priyanka-haldi-20261202@subhavivaham.in',
+    'UID:manideep-priyanka-haldi-20261202@subhavivaham.in',
     `DTSTAMP:${new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d{3}Z$/, 'Z')}`,
     'DTSTART:20261202T023000Z',
-    'SUMMARY:Haldi — Kamma Manidhip Chowdary & Priyanka',
+    'SUMMARY:Haldi — Kamma Manideep Chowdary & Priyanka Chowdary',
     'DESCRIPTION:Haldi ceremony on 2 December 2026 from 8:00 AM onwards (IST).\\nపసుపు వేడుక: 2 డిసెంబర్ 2026 ఉదయం 8:00 గంటల నుండి.',
     'STATUS:CONFIRMED',
     'END:VEVENT'
   ].join('\r\n');
 
+  // Pradhanam: 3 December 2026, 8:00 AM IST = 02:30 UTC. No end time was supplied.
+  const PRADHANAM_ICS_BLOCK = [
+    'BEGIN:VEVENT',
+    'UID:manideep-priyanka-pradhanam-20261203@subhavivaham.in',
+    `DTSTAMP:${new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d{3}Z$/, 'Z')}`,
+    'DTSTART:20261203T023000Z',
+    'SUMMARY:Pradhanam — Kamma Manideep Chowdary & Priyanka Chowdary',
+    'LOCATION:Sri Satyanarayana Swamy Kalyana Mandapam\\, Satyanarayanapuram\\, Pamuru\\, Prakasam District\\, Andhra Pradesh – 523108',
+    'DESCRIPTION:Pradhanam on Thursday\\, 3 December 2026 at 8:00 AM IST at Sri Satyanarayana Swamy Kalyana Mandapam\\, Pamuru.\\nప్రధానం: 3 డిసెంబర్ 2026 గురువారం ఉదయం 8:00 గంటలకు శ్రీ సత్యనారాయణ స్వామి కళ్యాణ మండపం\\, పామూరు నందు.',
+    'STATUS:CONFIRMED',
+    'END:VEVENT'
+  ].join('\r\n');
+
+  ['calendarPradhanamBtn', 'calDownloadPradhanamBtn'].forEach(id => {
+    const button = document.getElementById(id);
+    if (button) button.addEventListener('click', () => {
+      downloadIcs('Manideep-Priyanka-Pradhanam.ics', getSingleEventIcs(PRADHANAM_ICS_BLOCK));
+      if (id === 'calDownloadPradhanamBtn') closeSaveDate();
+    });
+  });
+
   // Calendar covers the confirmed 8:55–9:12 PM IST window; muhurtham is 9:02 PM.
   const MUHURTHAM_ICS_BLOCK = [
     'BEGIN:VEVENT',
-    'UID:manidhip-priyanka-wedding-20261203@subhavivaham.in',
+    'UID:manideep-priyanka-wedding-20261203@subhavivaham.in',
     `DTSTAMP:${new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d{3}Z$/, 'Z')}`,
     'DTSTART:20261203T152500Z',
     'DTEND:20261203T154200Z',
-    'SUMMARY:Wedding (Muhurtham 9:02 PM IST) — Kamma Manidhip Chowdary & Priyanka',
-    'LOCATION:Botlagudur Village\\, Pamur Mandal\\, Markapuram District\\, Andhra Pradesh',
-    'DESCRIPTION:శుభ వివాహం — కమ్మ మణిదీప్ చౌదరి మరియు ప్రియాంక.\\nబొట్లగూడూరు గ్రామం\\, పామూరు మండలం\\, మార్కాపురం జిల్లా.\\nMuhurtham: 3 December 2026 at 9:02 PM IST. Window: 8:55–9:12 PM IST. ముహూర్తం: రాత్రి 9:02 గంటలకు. శుభ సమయం: రాత్రి 8:55 నుండి 9:12 వరకు.',
+    'SUMMARY:Wedding (Muhurtham 9:02 PM IST) — Kamma Manideep Chowdary & Priyanka Chowdary',
+    'LOCATION:Sri Satyanarayana Swamy Kalyana Mandapam\\, Satyanarayanapuram\\, Pamuru\\, Prakasam District\\, Andhra Pradesh – 523108',
+    'DESCRIPTION:శుభ వివాహం — కమ్మ మణిదీప్ చౌదరి మరియు ప్రియాంక చౌదరి.\\nశ్రీ సత్యనారాయణ స్వామి కళ్యాణ మండపం\\, సత్యనారాయణపురం\\, పామూరు\\, ప్రకాశం జిల్లా – 523108.\\nParabhava Nama Samvatsaram\\, Karthika Bahula Dashami\\, Hasta Nakshatram\\, Karkataka Lagna Pushkaramsha.\\nMuhurtham: 3 December 2026 at 9:02 PM IST. Window: 8:55–9:12 PM IST. ముహూర్తం: రాత్రి 9:02 గంటలకు. శుభ సమయం: రాత్రి 8:55 నుండి 9:12 వరకు.',
     'STATUS:CONFIRMED',
     'END:VEVENT'
   ].join('\r\n');
@@ -561,7 +582,7 @@
     return [
       'BEGIN:VCALENDAR',
       'VERSION:2.0',
-      'PRODID:-//Kamma Manidhip Chowdary & Priyanka//Wedding Celebrations//EN',
+      'PRODID:-//Kamma Manideep Chowdary & Priyanka Chowdary//Wedding Celebrations//EN',
       'CALSCALE:GREGORIAN',
       'METHOD:PUBLISH',
       block,
@@ -573,14 +594,14 @@
   ['calendarHaldiBtn', 'calDownloadHaldiBtn'].forEach(id => {
     const button = document.getElementById(id);
     if (button) button.addEventListener('click', () => {
-      downloadIcs('Manidhip-Priyanka-Haldi.ics', getSingleEventIcs(HALDI_ICS_BLOCK));
+      downloadIcs('Manideep-Priyanka-Haldi.ics', getSingleEventIcs(HALDI_ICS_BLOCK));
       closeSaveDate();
     });
   });
 
   if (calDownloadMuhurthamBtn) {
     calDownloadMuhurthamBtn.addEventListener('click', () => {
-      downloadIcs('Manidhip-Priyanka-Wedding.ics', getSingleEventIcs(MUHURTHAM_ICS_BLOCK));
+      downloadIcs('Manideep-Priyanka-Wedding.ics', getSingleEventIcs(MUHURTHAM_ICS_BLOCK));
       closeSaveDate();
     });
   }
@@ -588,7 +609,7 @@
 
   if (calendarMuhurthamBtn) {
     calendarMuhurthamBtn.addEventListener('click', () => {
-      downloadIcs('Manidhip-Priyanka-Wedding.ics', getSingleEventIcs(MUHURTHAM_ICS_BLOCK));
+      downloadIcs('Manideep-Priyanka-Wedding.ics', getSingleEventIcs(MUHURTHAM_ICS_BLOCK));
     });
   }
 
@@ -700,7 +721,7 @@
     const attending = attendance.value === 'yes';
     const message = language === 'te'
       ? `నమస్కారం! నేను ${name}. మణిదీప్ మరియు ప్రియాంక వివాహం (3 డిసెంబర్ 2026 రాత్రి 9:02 గంటలకు): ${attending ? `మేము ఆనందంగా వస్తున్నాము. మాతో కలిపి మొత్తం ${guests.value} మంది.` : 'మేము రాలేకపోతున్నాము. వధూవరులకు మా శుభాకాంక్షలు!'}`
-      : `Hello! This is ${name}. RSVP for Manidhip & Priyanka’s wedding on 3 December 2026 at 9:02 PM IST: ${attending ? `Joyfully attending! Total guests including me: ${guests.value}.` : 'Unable to attend. Sending our love and best wishes!'}`;
+      : `Hello! This is ${name}. RSVP for Manideep & Priyanka’s wedding on 3 December 2026 at 9:02 PM IST: ${attending ? `Joyfully attending! Total guests including me: ${guests.value}.` : 'Unable to attend. Sending our love and best wishes!'}`;
     const url = new URL('https://wa.me/');
     url.searchParams.set('text', message);
     window.open(url.href, '_blank', 'noopener,noreferrer');
