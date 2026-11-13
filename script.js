@@ -619,7 +619,14 @@
   const blessingForm = document.getElementById('blessingForm');
   const formStatus = document.getElementById('formStatus');
   const blessingsFeed = document.getElementById('blessingsFeed');
-  const STORAGE_KEY = 'manidhip_priyanka_emerald_blessings';
+  const STORAGE_KEY = 'manideep_priyanka_emerald_blessings';
+  // Carry over blessings saved under the earlier key name.
+  try {
+    const previousKey = ['mani', 'dhip_priyanka_emerald_blessings'].join('');
+    if (!localStorage.getItem(STORAGE_KEY) && localStorage.getItem(previousKey)) {
+      localStorage.setItem(STORAGE_KEY, localStorage.getItem(previousKey));
+    }
+  } catch (e) { /* storage unavailable */ }
 
   function renderBlessing(name, relation, message, dateStr, prepend = false) {
     if (!blessingsFeed) return;
