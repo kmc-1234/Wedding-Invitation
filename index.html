@@ -33,7 +33,7 @@
     href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Cinzel+Decorative:wght@700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Marcellus&family=Noto+Sans+Telugu:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=7">
+  <link rel="stylesheet" href="style.css?v=9">
 </head>
 
 <body class="seal-locked">
@@ -127,6 +127,10 @@
 
       <!-- Events Preview Ribbon -->
       <div class="seal-events-preview">
+        <div class="preview-item">
+          <strong data-en="2 December 2026" data-te="2 డిసెంబర్ 2026">2 December 2026</strong>
+          <span data-en="Haldi · 8:00 AM onwards" data-te="పసుపు వేడుక · ఉదయం 8:00 నుండి">Haldi · 8:00 AM onwards</span>
+        </div>
         <div class="preview-item">
           <strong data-en="3 December 2026" data-te="3 డిసెంబర్ 2026">3 December 2026</strong>
           <span><span data-en="Wedding Invitation" data-te="శుభ వివాహ ఆహ్వానం">Wedding Invitation</span></span>
@@ -301,6 +305,34 @@
       <!-- =====================================================================
            WEDDING: SUBHA VIVAHAM (THE SACRED WEDDING CEREMONY)
            ===================================================================== -->
+      <!-- Haldi ceremony -->
+      <section class="emerald-section celebration-event-card haldi-sangeeth-card" id="haldi">
+        <div class="event-card-surface">
+          <div class="event-header-pill haldi-pill">
+            <span aria-hidden="true">🌼</span>
+            <span data-en="HALDI CEREMONY" data-te="పసుపు వేడుక">HALDI CEREMONY</span>
+          </div>
+          <h2 class="event-card-title" data-en="A Morning of Haldi &amp; Happiness" data-te="పసుపు వేడుకతో ఆనందాల ఉదయం">A Morning of Haldi &amp; Happiness</h2>
+          <p class="event-card-telugu" lang="te">పసుపు వేడుక · మంగళ స్నానం</p>
+          <div class="event-date-display haldi-date-display">
+            <span class="date-weekday" data-en="WEDNESDAY" data-te="బుధవారం">WEDNESDAY</span>
+            <div class="date-large-day">02</div>
+            <span class="date-month-year" data-en="DECEMBER 2026" data-te="డిసెంబర్ 2026">DECEMBER 2026</span>
+            <span class="date-ritual-context" lang="te">2 డిసెంబర్ 2026 · బుధవారం</span>
+          </div>
+          <div class="haldi-time-spotlight">
+            <strong data-en="8:00 AM onwards" data-te="ఉదయం 8:00 గంటల నుండి">8:00 AM onwards</strong>
+            <span data-en="Indian Standard Time (IST)" data-te="భారత ప్రామాణిక కాలమానం">Indian Standard Time (IST)</span>
+          </div>
+          <p class="section-description" data-en="Join us for a joyful morning of turmeric, laughter, and family blessings." data-te="పసుపు, ఆనందం, కుటుంబ సభ్యుల ఆశీస్సులతో జరిగే ఈ వేడుకకు సాదర ఆహ్వానం.">Join us for a joyful morning of turmeric, laughter, and family blessings.</p>
+          <div class="event-actions-flex">
+            <button type="button" class="event-btn outline-cal-btn" id="calendarHaldiBtn">
+              <span data-en="📅 Add Haldi to Calendar" data-te="📅 పసుపు వేడుకను క్యాలెండర్‌లో చేర్చండి">📅 Add Haldi to Calendar</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
       <section class="emerald-section celebration-event-card vivaham-card" id="wedding">
         <div class="event-card-surface">
 
@@ -526,6 +558,7 @@
         </div>
 
         <div class="footer-dates-badge">
+          <span data-en="Haldi: 2 December 2026 · 8:00 AM onwards" data-te="పసుపు వేడుక: 2 డిసెంబర్ 2026 · ఉదయం 8:00 నుండి">Haldi: 2 December 2026 · 8:00 AM onwards</span><br>
           <span data-en="3 December 2026 · Botlagudur Village" data-te="3 డిసెంబర్ 2026 · బొట్లగూడూరు గ్రామం">3 December 2026 · Botlagudur Village</span><br>
           <span lang="te">3 డిసెంబర్ 2026 · బొట్లగూడూరు గ్రామం</span>
         </div>
@@ -619,6 +652,14 @@
       <div class="venues-interactive-list">
 
 
+        <button type="button" class="venue-modal-card haldi-venue-card" id="calDownloadHaldiBtn">
+          <div class="card-venue-icon" aria-hidden="true">🌼</div>
+          <div class="card-venue-text">
+            <strong data-en="Haldi Ceremony" data-te="పసుపు వేడుక">Haldi Ceremony</strong>
+            <span class="v-place" data-en="2 December 2026 · 8:00 AM onwards (IST)" data-te="2 డిసెంబర్ 2026 · ఉదయం 8:00 గంటల నుండి">2 December 2026 · 8:00 AM onwards (IST)</span>
+          </div>
+          <span class="card-venue-arrow" aria-hidden="true">📥</span>
+        </button>
       <!-- Download Muhurtham Only -->
         <button class="venue-modal-card vivaham-venue-card" id="calDownloadMuhurthamBtn">
           <div class="card-venue-icon">🪔</div>
@@ -638,7 +679,7 @@
     <button type="button" id="closePhotoBtn" aria-label="Close photo">×</button>
     <img id="expandedPhoto" alt="Manidhip and Priyanka">
   </dialog>
-  <script src="script.js?v=6"></script>
+  <script src="script.js?v=9"></script>
 </body>
 
 </html>

@@ -531,6 +531,18 @@
     URL.revokeObjectURL(url);
   }
 
+  // 8:00 AM IST = 02:30 UTC. No end time was supplied.
+  const HALDI_ICS_BLOCK = [
+    'BEGIN:VEVENT',
+    'UID:manidhip-priyanka-haldi-20261202@subhavivaham.in',
+    `DTSTAMP:${new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d{3}Z$/, 'Z')}`,
+    'DTSTART:20261202T023000Z',
+    'SUMMARY:Haldi — Kamma Manidhip Chowdary & Priyanka',
+    'DESCRIPTION:Haldi ceremony on 2 December 2026 from 8:00 AM onwards (IST).\\nపసుపు వేడుక: 2 డిసెంబర్ 2026 ఉదయం 8:00 గంటల నుండి.',
+    'STATUS:CONFIRMED',
+    'END:VEVENT'
+  ].join('\r\n');
+
   // All-day calendar entry until the family supplies a ceremony time.
   const MUHURTHAM_ICS_BLOCK = [
     'BEGIN:VEVENT',
@@ -557,6 +569,14 @@
     ].join('\r\n');
   }
 
+
+  ['calendarHaldiBtn', 'calDownloadHaldiBtn'].forEach(id => {
+    const button = document.getElementById(id);
+    if (button) button.addEventListener('click', () => {
+      downloadIcs('Manidhip-Priyanka-Haldi.ics', getSingleEventIcs(HALDI_ICS_BLOCK));
+      closeSaveDate();
+    });
+  });
 
   if (calDownloadMuhurthamBtn) {
     calDownloadMuhurthamBtn.addEventListener('click', () => {

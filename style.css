@@ -1786,3 +1786,18 @@ html[lang="te"] .section-kicker-gold, html[lang="te"] .cd-title-badge { letter-s
 }
 
 [hidden] { display: none !important; }
+
+/* Haldi begins at 8 AM IST; the family has not supplied an end time. */
+.haldi-time-spotlight {
+  display: grid;
+  gap: 6px;
+  padding: 20px 12px;
+  margin-bottom: 20px;
+  border: 1px solid #e8c46c;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #63400d, #382a0a);
+  color: #fff1bc;
+}
+.haldi-time-spotlight strong { font: 600 clamp(20px, 5vw, 28px)/1.6 var(--font-classic); }
+.haldi-time-spotlight span { font: 400 12px/1.6 var(--font-sans); }
+.seal-events-preview { flex-wrap: wrap; row-gap: 14px; }
